@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>今天天气</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top, #aee1f9, #ffffff);
+      font-family: "微软雅黑", sans-serif;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1, p {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #007acc;
+      animation-delay: 0.5s;
+    }
+
+    p {
+      font-size: 24px;
+      animation-delay: 1.5s;
+    }
+
+    .sun {
+      font-size: 40px;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .sun.spin {
+      animation: spin 1s linear;
+    }
+
+    .cloud {
+      position: absolute;
+      top: 100px;
+      left: -200px;
+      font-size: 80px;
+      color: #fff;
+      opacity: 0.8;
+      animation: floatCloud 20s linear infinite;
+    }
+
+    .bird {
+      position: absolute;
+      top: 50px;
+      left: -100px;
+      font-size: 32px;
+      animation: flyBird 12s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes floatCloud {
+      0% {
+        left: -200px;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    @keyframes flyBird {
+      0% {
+        left: -100px;
+        top: 60px;
+      }
+      50% {
+        top: 40px;
+      }
+      100% {
+        left: 110%;
+        top: 60px;
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cloud">☁️</div>
+  <div class="bird">🐦</div>
+  <h1>今天天气好好</h1>
+  <p>蓝天白云，心情舒畅~ <span class="sun" id="sun">☀️</span></p>
+
+  <script>
+    const sun = document.getElementById('sun');
+    sun.addEventListener('click', () => {
+      sun.classList.add('spin');
+      setTimeout(() => {
+        sun.classList.remove('spin');
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

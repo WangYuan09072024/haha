@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(165, 242, 177);
+}
+.content{
+border: 10px groove purple;
+border-radius: 50px;
+color: rgb(208, 0, 166);
+background-color: rgb(204, 174, 232);
+margin: 200px;
+padding: 200px;
+gap: 50px;
+}
+
+a {
+    border: 2px solid rgb(80, 196, 80);
+    background-color: rgb(144, 247, 144);
+    margin: 50px;
+    padding: 60px;
+    text-decoration: none;
+    color: rgb(222, 103, 103);
+    font-weight: bold;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.2rem;
+
+}
+
+a:hover {
+    font-size: 2rem;
+    background-color: rgb(61, 153, 61);
+    background: linear-gradient(to right, yellow, pink);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+}
+
+.heading{
+    font-family: 'Comic Sans MS', cursive;
+    animation: sparkle 3s infinite alternate;
+    display: flex;
+    justify-self: center;
+    font-size: 3rem;
+}
+
+.crazy-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; 
+    z-index: 999;
+}
+
+.crazy-gallery img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    pointer-events: auto; 
+}
+
