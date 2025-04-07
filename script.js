@@ -1,18 +1,12 @@
 const images = document.querySelectorAll('.crazy-gallery img');
 
-function randomPosition(img) {
-    img.style.top = Math.random() * 90 + "vh";
-    img.style.left = Math.random() * 90 + "vw";
-}
+images.forEach((img, index) => {
 
-images.forEach(img => {
-    randomPosition(img);
+  const top = Math.random() * window.innerHeight;
+  const left = Math.random() * window.innerWidth;
+  img.style.top = `${top}px`;
+  img.style.left = `${left}px`;
 
-    img.addEventListener('mouseenter', () => {
-        randomPosition(img);
-    });
 
-    setInterval(() => {
-        randomPosition(img);
-    }, 5000); 
+  img.style.animationDuration = `${15 + Math.random() * 15}s`;
 });
